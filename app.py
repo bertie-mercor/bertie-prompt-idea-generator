@@ -4,7 +4,8 @@ import re
 from openai import OpenAI
 
 # Init OpenAI
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+#client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+client = OpenAI(api_key"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")
 
 
 st.title("Prompt Generator for Investment Analysts")
