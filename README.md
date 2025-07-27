@@ -1,0 +1,1 @@
+# bertie-prompt-idea-generator
