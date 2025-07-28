@@ -199,13 +199,13 @@ with col4:
 
 # Display ideas
 if st.session_state.ideas_investment:
-    st.subheader("📋 Investment Banking Prompts")
+    st.subheader("📋 Investment Banking Prompt Ideas")
     for i, idea in enumerate(st.session_state.ideas_investment, 1):
         cleaned = re.sub(r'^\s*\d+[\.\)]\s*', '', idea).strip(' "\'')
         st.markdown(f"{i}. {cleaned}")
 
 if st.session_state.ideas_medicine:
-    st.subheader("📋 Medicine Prompts")
+    st.subheader("📋 Medicine Prompt Ideas")
     for i, idea in enumerate(st.session_state.ideas_medicine, 1):
         cleaned = re.sub(r'^\s*\d+[\.\)]\s*', '', idea).strip(' "\'')
         st.markdown(f"{i}. {cleaned}")
