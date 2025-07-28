@@ -57,6 +57,11 @@ Guidelines:
 - Use real companies, metrics, measures, and values. No placeholders.
 - Only focus on companies with SEC filings. No macroeconomic analysis.
 - Avoid examples that require regression or sophisticated tooling.
+- Comparisons are really powerful, such as comparing over time or across companies.
+- Slightly abstract queries are great too, such as giving an abstract concept (e.g., strength, liquidity, growth) and letting the answer work out what it means.
+- You should not refer directly to the SEC filing unless it's actually necessary.
+- You can refer to entire industries, e.g., Airlines, Insurance, Consumer Stapes. 
+- You can be forward looking, e.g., assess what will happen given past behavior or if certain assumptions continue (e.g., linear revenue growth). 
 
 Examples of suitable topics and subtopics:
 
