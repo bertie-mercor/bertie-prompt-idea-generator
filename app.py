@@ -6,7 +6,7 @@ from openai import OpenAI
 # Init OpenAI
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
-st.title("Prompt Generator for Investment Analysts")
+st.title("Prompt Generator")
 
 # Initialize session state
 if "ideas_investment" not in st.session_state:
@@ -74,23 +74,27 @@ with col1:
     if st.button("💼 Investment Banking: Generate 5"):
         st.session_state.ideas_investment = generate_ideas(instruction_investment, [])
         st.success("Generated 5 new investment ideas.")
+
 with col2:
+    if st.button("🩺 Medicine: Generate 5"):
+        st.session_state.ideas_medicine = generate_ideas(instruction_medicine, [])
+        st.success("Generated 5 new medical ideas.")
+
+
+# Medicine Buttons
+col3, col4 = st.columns(2)
+with col3:
     if st.button("➕ Investment Banking: Generate 5 More"):
         more = generate_ideas(instruction_investment, st.session_state.ideas_investment)
         st.session_state.ideas_investment.extend(more)
         st.success("Added 5 more investment ideas.")
 
-# Medicine Buttons
-col3, col4 = st.columns(2)
-with col3:
-    if st.button("🩺 Medicine: Generate 5"):
-        st.session_state.ideas_medicine = generate_ideas(instruction_medicine, [])
-        st.success("Generated 5 new medical ideas.")
 with col4:
     if st.button("➕ Medicine: Generate 5 More"):
         more = generate_ideas(instruction_medicine, st.session_state.ideas_medicine)
         st.session_state.ideas_medicine.extend(more)
         st.success("Added 5 more medical ideas.")
+
 
 # Display ideas
 if st.session_state.ideas_investment:
