@@ -174,32 +174,32 @@ Examples of suitable topics and subtopics, with example focuses
 
 """
 
-# Investment Banking Buttons
+# Col 1
 col1, col2 = st.columns(2)
 with col1:
-    if st.button("💼  Investment Banking: Generate 5"):
+    if st.button("💼  Investment Banking: Generate 5 more"):
         st.session_state.ideas_investment = generate_ideas(instruction_investment, [])
         st.success("Generated 5 new investment ideas.")
 
 with col2:
-    if st.button("🩺  Medicine: Generate 5"):
+    if st.button("🩺  Medicine: Generate 5 more"):
         st.session_state.ideas_medicine = generate_ideas(instruction_medicine, [])
         st.success("Generated 5 new medical ideas. If you also generated IB ideas, these appear below.")
 
 
-# Medicine Buttons
-col3, col4 = st.columns(2)
-with col3:
-    if st.button("💼  Investment Banking: 5 More"):
-        more = generate_ideas(instruction_investment, st.session_state.ideas_investment)
-        st.session_state.ideas_investment.extend(more)
-        st.success("Added 5 more investment ideas.")
+# # Col 2
+# col3, col4 = st.columns(2)
+# with col3:
+#     if st.button("💼  Investment Banking: 5 More"):
+#         more = generate_ideas(instruction_investment, st.session_state.ideas_investment)
+#         st.session_state.ideas_investment.extend(more)
+#         st.success("Added 5 more investment ideas.")
 
-with col4:
-    if st.button("🩺  Medicine: 5 More"):
-        more = generate_ideas(instruction_medicine, st.session_state.ideas_medicine)
-        st.session_state.ideas_medicine.extend(more)
-        st.success("Added 5 more medical ideas.")
+# with col4:
+#     if st.button("🩺  Medicine: 5 More"):
+#         more = generate_ideas(instruction_medicine, st.session_state.ideas_medicine)
+#         st.session_state.ideas_medicine.extend(more)
+#         st.success("Added 5 more medical ideas.")
 
 
 # Display ideas
