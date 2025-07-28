@@ -57,7 +57,7 @@ Guidelines:
 - Use real companies, metrics, measures, and values. No placeholders.
 - Only focus on companies with SEC filings. No macroeconomic analysis.
 - Avoid examples that require regression or sophisticated tooling.
-- Comparisons are really powerful, such as comparing over time or across companies.
+- Comparisons are really powerful, such as comparing over time or across companies. But don't make every question a comparison!
 - Slightly abstract queries are great too, such as giving an abstract concept (e.g., strength, liquidity, growth) and letting the answer work out what it means.
 - You should not refer directly to the SEC filing unless it's actually necessary.
 - You can refer to entire industries, e.g., Airlines, Insurance, Consumer Stapes. 
@@ -184,7 +184,7 @@ with col1:
 with col2:
     if st.button("🩺  Medicine: Generate 5"):
         st.session_state.ideas_medicine = generate_ideas(instruction_medicine, [])
-        st.success("Generated 5 new medical ideas.")
+        st.success("Generated 5 new medical ideas. If you also generated IB ideas, these appear below.")
 
 
 # Medicine Buttons
