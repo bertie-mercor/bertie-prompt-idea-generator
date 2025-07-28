@@ -181,15 +181,16 @@ with col1:
     if st.button("💼  Investment Banking: 5 More"):
         more = generate_ideas(instruction_investment, st.session_state.ideas_investment)
         st.session_state.ideas_investment.extend(more)
-        st.success("Added 5 more investment ideas.")
+        st.success("Generated 5 investment ideas.")
 
 with col2:
     if st.button("🩺  Medicine: 5 More"):
         more = generate_ideas(instruction_medicine, st.session_state.ideas_medicine)
         st.session_state.ideas_medicine.extend(more)
-        st.success("Added 5 more medical ideas.")
+        st.success("Generated 5 new medical ideas. If you also generated IB ideas, these appear below.")
 
 
+### OLD formatting, with two columns (second column is redundant)
 # # Col 1
 # col1, col2 = st.columns(2)
 # with col1:
