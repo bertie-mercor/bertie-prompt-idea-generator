@@ -6,7 +6,7 @@ from openai import OpenAI
 # Init OpenAI
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
-st.title("Prompt Generator")
+st.title("Idea Generator")
 
 # Initialize session state
 if "ideas_investment" not in st.session_state:
@@ -48,6 +48,8 @@ def generate_ideas(domain_instruction, previous_ideas):
 
     arguments = json.loads(response.choices[0].message.tool_calls[0].function.arguments)
     return arguments["items"]
+
+
 
 # Instructions for each domain
 instruction_investment = """
@@ -131,6 +133,7 @@ Examples of suitable topics and subtopics:
 	•	Financial Market Regulation & Systemic Risk
 """
 
+
 instruction_medicine = """
 I want you to create 5 example prompts that a medical researcher or doctor would input to a frontier AI model to help them in their day-to-day work. Return a list of real prompts.
 
@@ -181,13 +184,13 @@ with col1:
     if st.button("💼  Investment Banking: 5 More"):
         more = generate_ideas(instruction_investment, st.session_state.ideas_investment)
         st.session_state.ideas_investment.extend(more)
-        st.success("Generated 5 investment ideas.")
+        st.success("Generated another 5 investment ideas.")
 
 with col2:
     if st.button("🩺  Medicine: 5 More"):
         more = generate_ideas(instruction_medicine, st.session_state.ideas_medicine)
         st.session_state.ideas_medicine.extend(more)
-        st.success("Generated 5 new medical ideas. If you also generated IB ideas, these appear below.")
+        st.success("Generated another 5 new medical ideas. If you generated IB ideas, these appear below.")
 
 
 ### OLD formatting, with two columns (second column is redundant)
